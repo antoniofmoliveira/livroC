@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "exercicios.h": "c",
+        "algorithm": "c",
+        "random": "c"
+    }
+}

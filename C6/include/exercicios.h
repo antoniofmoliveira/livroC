@@ -1,0 +1,32 @@
+
+void exercv6_1(void);
+void exercv6_2(void);
+void exercv6_3(void);
+void exercv6_4(void);
+void exercv6_5(void);
+void exercv6_6(void);
+void exercv6_7(void);
+void exercv6_8(void);
+void exercv6_9(void);
+void exercv6_10(void);
+void exercv6_11(void);
+void exercv6_12(void);
+void exercv6_13(void);
+void exercv6_14(void);
+void exercv6_15(void);
+
+void exercm6_1(void);
+void exercm6_2(void);
+void exercm6_3(void);
+void exercm6_4(void);
+void exercm6_5(void);
+void exercm6_6(void);
+void exercm6_7(void);
+void exercm6_8(void);
+void exercm6_9(void);
+void exercm6_10(void);
+void exercm6_11(void);
+void exercm6_12(void);
+void exercm6_13(void);
+void exercm6_14(void);
+void exercm6_15(void);
