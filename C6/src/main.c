@@ -34,7 +34,7 @@ int main(int argc, char const *argv[])
     // exercm6_12();
     // exercm6_13();
     // exercm6_14();
-    exercm6_15();
+    // exercm6_15();
 
     return 0;
 }

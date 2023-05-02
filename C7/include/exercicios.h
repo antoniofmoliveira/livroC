@@ -1,0 +1,15 @@
+void exerc7_1(void);
+void exerc7_2(void);
+void exerc7_3(void);
+void exerc7_4(void);
+void exerc7_5(void);
+void exerc7_6(void);
+void exerc7_7(void);
+void exerc7_8(void);
+void exerc7_9(void);
+void exerc7_10(void);
+void exerc7_11(void);
+void exerc7_12(void);
+void exerc7_13(void);
+void exerc7_14(void);
+void exerc7_15(void);

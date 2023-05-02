@@ -267,24 +267,9 @@ void exercv6_14(void)
     printf(" o desvio padrão (amostra) do array é,: %f.\n", r);
 }
 
-void swap(float *xp, float *yp)
+int compare(const void *a, const void *b)
 {
-    float temp = *xp;
-    *xp = *yp;
-    *yp = temp;
-}
-
-void selectionSort(float arr[], int n) // https://www.geeksforgeeks.org/selection-sort/
-{
-    int i, j, min_idx;
-    for (i = 0; i < n - 1; i++)
-    {
-        min_idx = i;
-        for (j = i + 1; j < n; j++)
-            if (arr[j] < arr[min_idx])
-                min_idx = j;
-        swap(&arr[min_idx], &arr[i]);
-    }
+    return (*(float *)a - *(float *)b);
 }
 
 void exercv6_15(void)
@@ -297,7 +282,7 @@ void exercv6_15(void)
         printf(" valor %d: ", i + 1);
         scanf("%f", &v[i]);
     }
-    selectionSort(v, num_elem);
+    qsort(v, num_elem, sizeof(v[0]), compare);
     for (int i = 0; i < num_elem; i++)
         printf(" %f,", v[i]);
     printf("\n");

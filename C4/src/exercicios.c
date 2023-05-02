@@ -92,7 +92,7 @@ void exerc4_7(void)
     memset(c, 0, 3 * sizeof(char));
     printf("Informe o valor em número real: ");
     scanf("%f", &val);
-    getchar(); // para descartar o ENTER
+    setbuf(stdin, NULL); // para descartar o ENTER
     printf("Informe o estado: (MG,SP,RJ,MS): ");
     scanf("%2[^\n]", c); // permite a entrada de string com 2 caracteres e espaço. observe que não usa &c para string
     // toUpperCase

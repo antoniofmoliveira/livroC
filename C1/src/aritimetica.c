@@ -1,4 +1,7 @@
+#include <stdlib.h>
+#include <stdio.h>
 #include "../include/aritimetica.h"
+
 int soma(int a, int b)
 {
     return a + b;
@@ -20,7 +23,8 @@ void testa_aritimetica(void)
 {
     int x, y, z;
     char ch;
-    ch = getchar(); // apenas para limpar buffer
+    setbuf(stdin, NULL); // apenas para limpar buffer
+
     printf("Digite uma operacao matematica (+,-,*,/): ");
     scanf("%c", &ch);
     printf("Digite 2 numeros: ");

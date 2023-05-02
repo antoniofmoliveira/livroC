@@ -17,5 +17,5 @@ int main(int argc, char const *argv[])
     // exerc2_12();
     // exerc2_13();
     // exerc2_14();
-    exerc2_15();
+    // exerc2_15();
 }
