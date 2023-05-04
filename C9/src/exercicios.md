@@ -91,63 +91,79 @@ A função deve ter como parâmetro o número de termos que serão somados, N. N
 que quanto maior esse número, mais próxima do valor e estará a resposta.
 
 ### Passagem por referência
+
 1) Escreva uma função que, dado um número real passado como parâmetro, retorne
 a parte inteira e a parte fracionária desse número por referência.
+
 2) Escreva uma função para o cálculo do volume e área de uma esfera
 V = 4/3 π + r3,
 A = 4 π * r2
 em que π = 3.1414592. O valor do raio r deve ser passado por parâmetro, e os
 valores calculados devem ser retornados por referência.
+
 3) Escreva uma função que receba um array de 10 elementos e retorne a sua soma.
+
 4) Escreva uma função que receba um array contendo a nota de 10 alunos e retorne
 a média dos alunos.
+
 5) Escreva uma função que calcule o desvio-padrão d de um vetor V contendo n
 números
 em que m é a média desse vetor.
+
 6) Crie uma função que receba uma matriz A contendo cinco linhas e cinco colunas.
 Calcule na própria matriz A a sua transposta (se B é a matriz transposta de A,
 então A[i][j] = B[j][i]).
+
 7) Crie uma função que receba uma matriz A contendo 10 linhas e 10 colunas e
 retorne a soma dos seus elementos.
+
 8) Faça uma função que receba, por parâmetro, uma matriz A contendo seis linhas
 e seis colunas. Essa função deve retornar, por referência, a soma dos elementos da
 sua diagonal principal e da sua diagonal secundária.
+
 9) Crie uma estrutura representando um aluno de uma disciplina. Essa estrutura
 deve conter o número de matrícula do aluno, seu nome e as notas de três provas.
 Agora, escreva uma função que receba um vetor de tamanho N dessa estrutura.
 Essa função deve retornar o índice do aluno que possui a maior média geral entre
 todos os alunos.
+
 10) Escreva uma função que receba uma string e retorne se ela é um palíndromo (1)
 ou não (0). Um palíndromo é uma palavra que tem a propriedade de poder ser
 lida tanto da direita para a esquerda como da esquerda para a direita. Exemplos:
 ovo, arara, rever, asa, osso etc.
+
 11) Escreva uma função que receba uma string e converta todos os seus caracteres
 em maiúscula. Dica: subtraia 32 dos caracteres cujo código ASCII está entre 97 e
 122.
+
 12) Escreva uma função que receba como parâmetro um vetor contendo N valores in-
 teiros. Essa função deve retornar, por referência, dois valores: a soma dos números
 pares e ímpares.
+
 13) Crie uma função que receba um vetor de tamanho N e ordene os seus valores.
+
 14) Elabore uma função que receba por parâmetros os coeficientes de uma equação do
 segundo grau. Em seguida, calcule e mostre as raízes dessa equação. Lembre-se de
 que as raízes são calculadas como
 em que ∆ = b2 – 4 * a * c e ax2 + bx + c = 0 representa uma equação do segun-
 do grau. A variável a tem de ser diferente de zero. Caso seja igual, imprima a
-
 mensagem “Não é equação de segundo grau” e retorne o valor −1. Do contrário,
 retorne o número de raízes e as raízes (por referência) se elas existirem:
 •• Se ∆ < 0, não existe real. Número de raízes: 0.
 •• Se ∆ = 0, existe uma raiz real. Número de raízes: 1.
 •• Se ∆ > 0, existem duas raízes reais. Número de raízes: 2
+
 15) Elabore uma função que receba um vetor contendo N valores e retorne por refe-
 rência o maior e o menor elemento desse vetor.
+
 16) Elabore uma função que receba um vetor contendo N valores e retorne por refe-
 rência o maior elemento do vetor e o número de vezes que esse elemento ocorreu
 no vetor.
 
 ### Recursão
 1) Escreva uma função recursiva que calcule a soma dos primeiros n cubos:
-S = 13 + 23 + ... + n3
+S = 1^3 + 2^3 + ... + n^3
+
 2) Crie uma função recursiva que receba um número inteiro N e retorne o somatório
 dos números de 1 a N.
 3) Crie uma função recursiva que receba um número inteiro N e imprima todos os

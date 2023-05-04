@@ -39,8 +39,9 @@ int main(int argc, char const *argv[])
     // exerc9r_13();
     // exerc9r_14();
     // exerc9r_15();
+    // exerc9r_16();
 
-    // exerc9c_1();
+    exerc9c_1();
     // exerc9c_2();
     // exerc9c_3();
     // exerc9c_4();

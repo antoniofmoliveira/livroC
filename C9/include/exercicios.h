@@ -34,6 +34,7 @@ void exerc9r_12(void);
 void exerc9r_13(void);
 void exerc9r_14(void);
 void exerc9r_15(void);
+void exerc9r_16(void);
 
 void exerc9c_1(void);
 void exerc9c_2(void);

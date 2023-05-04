@@ -370,9 +370,14 @@ void exerc9v_17(void)
     printf(" a soma da série S de %d é %.1f.\n", n, serieS(n));
 }
 
+double graus_to_radianos(double n)
+{
+    return n * M_PI / 180.0; // radianos
+}
+
 double sen_x(double n)
 {
-    double r = n * M_PI / 180.0; // radianos
+    double r = graus_to_radianos(n);
     printf("%f\n", r);
     double acc = 0.0;
     for (double i = 0.0; i <= 5.0; i++)
@@ -393,7 +398,7 @@ void exerc9v_18(void)
 
 double cos_x(double n)
 {
-    double r = n * M_PI / 180.0; // radianos
+    double r = graus_to_radianos(n);
     printf("%f\n", r);
     double acc = 0.0;
     for (int i = 0; i <= 5; i++)
@@ -426,21 +431,433 @@ void exerc9v_20(void)
     printf(" e= %f.\n", enep(n));
 }
 
-void exerc9r_1(void) {}
-void exerc9r_2(void) {}
-void exerc9r_3(void) {}
-void exerc9r_4(void) {}
-void exerc9r_5(void) {}
-void exerc9r_6(void) {}
-void exerc9r_7(void) {}
-void exerc9r_8(void) {}
-void exerc9r_9(void) {}
-void exerc9r_10(void) {}
-void exerc9r_11(void) {}
-void exerc9r_12(void) {}
-void exerc9r_13(void) {}
-void exerc9r_14(void) {}
-void exerc9r_15(void) {}
+void separa(float n, int *o, float *p)
+{
+    *o = (int)n;
+    *p = n - *o;
+}
+
+void exerc9r_1(void)
+{
+    float n = 1.5;
+    int o = 0;
+    float p = 0.0;
+    separa(n, &o, &p);
+    printf(" %f = %d + %f.\n", n, o, p);
+}
+
+float area_esfera(float r)
+{
+    return 4 * M_PI * r * r;
+}
+
+void volume_area_esfera_ref(float r, float *v, float *a)
+{
+    *v = volume_esfera(r);
+    *a = area_esfera(r);
+}
+
+void exerc9r_2(void)
+{
+    float r = 15, v = 0.0, a = 0.0;
+    volume_area_esfera_ref(r, &v, &a);
+    printf(" o volume da esfera com raio %f é %f.\n", r, v);
+    printf(" a área da esfera com raio %f é %f.\n", r, a);
+}
+
+int soma_array(int a[], int n) // ou *a
+{
+    int s = 0;
+    for (int i = 0; i < n; i++)
+    {
+        s += a[i];
+    }
+    return s;
+}
+
+void exerc9r_3(void)
+{
+    int a[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    int s = soma_array(a, 10);
+    printf(" a soma do array é %d.\n", s);
+}
+
+float media_array(int a[], int n) // ou *a
+{
+    int s = 0;
+    for (int i = 0; i < n; i++)
+    {
+        s += a[i];
+    }
+    return (float)s / (float)n;
+}
+
+void exerc9r_4(void)
+{
+    int a[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    float s = media_array(a, 10);
+    printf(" a média do array é %f.\n", s);
+}
+
+float desvio_padrao_amostra(int a[], int n) // ou *a
+{
+    float s = 0.0, o = 0.0, p = 0, q = 0.0, r = 0.0;
+    for (int i = 0; i < n; i++)
+        s += (float)a[i];          // soma
+    o = s / (float)n;              // média aritmética
+    for (int i = 0; i < n; i++)    // cada elemento subtrai a média e eleva o resultado ao quadrados
+    {                              //
+        float f = (float)a[i] - o; //
+        p += (f * f);              // a soma dos quadrados da subração da média de cada elemento
+    }                              //
+    q = p / ((float)n - 1.0);      // variância da amostra. se população retira o -1
+    r = sqrt(q);                   // desvio padrão
+    return r;
+}
+
+void exerc9r_5(void)
+{
+    int a[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    float s = desvio_padrao_amostra(a, 10);
+    printf(" o desvio padrão do array é %f.\n", s);
+}
+
+void transpose(int a[][5], int b[][5], int n, int m)
+{
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < m; j++)
+        {
+            b[j][i] = a[i][j];
+        }
+    }
+}
+
+void exerc9r_6(void)
+{
+    int a[5][5] = {{1, 2, 3, 4, 5}, {2, 3, 4, 5, 1}, {3, 4, 5, 1, 2}, {4, 5, 1, 2, 3}, {5, 1, 2, 5, 4}};
+    int b[5][5];
+    transpose(a, b, 5, 5);
+    for (int i = 0; i < 5; i++)
+    {
+        for (int j = 0; j < 5; j++)
+        {
+            printf(" %d ", b[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+int soma_matriz(int a[][10], int n, int m)
+{
+    int acc = 0;
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < m; j++)
+        {
+            acc += a[i][j];
+        }
+    }
+    return acc;
+}
+
+void exerc9r_7(void)
+{
+    int a[10][10];
+    for (int i = 0; i < 10; i++)
+    {
+        for (int j = 0; j < 10; j++)
+        {
+            a[i][j] = i * 10 + j;
+            printf(" %2d", a[i][j]);
+        }
+        printf("\n");
+    }
+    printf("\n\n");
+    int r = soma_matriz(a, 10, 10);
+    printf(" a soma da matriz é %d.\n", r);
+}
+
+void soma_diagonais(int a[][6], int n, int m, int *r1, int *r2)
+{
+    int d1 = 0, d2 = 0;
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < m; j++)
+        {
+            if (i == j)
+                d1 += a[i][j];
+        }
+    }
+    *r1 = d1;
+    for (int i = 0, j = 6 - 1; i < 6; i++, j--)
+        d2 += a[i][j];
+    *r2 = d2;
+}
+
+void exerc9r_8(void)
+{
+    int a[6][6];
+    for (int i = 0; i < 6; i++)
+    {
+        for (int j = 0; j < 6; j++)
+        {
+            a[i][j] = i * 6 + j;
+            if (i == j)
+                a[i][j] = 1;
+        }
+        printf("\n");
+    }
+    for (int i = 0, j = 6 - 1; i < 6; i++, j--)
+        a[i][j] = 2;
+    for (int i = 0; i < 6; i++)
+    {
+        for (int j = 0; j < 6; j++)
+            printf(" %2d", a[i][j]);
+        printf("\n");
+    }
+    printf("\n\n");
+    int r1 = 0, r2 = 0;
+    soma_diagonais(a, 6, 6, &r1, &r2);
+    printf(" a soma da diagonal principal é %d.\n", r1);
+    printf(" a soma da diagonal secundária é %d.\n", r2);
+}
+
+struct aluno
+{
+    int matricula;
+    char nome[30];
+    float nota1, nota2, nota3;
+};
+
+int maior_media_geral(struct aluno a[], int n)
+{
+    int in = 0;
+    float me = 0.0;
+
+    for (int i = 0; i < n; i++)
+    {
+        float m = (a[i].nota1 + a[i].nota2 + a[i].nota3) / 3.0;
+        if (i == 0)
+        {
+            in = 0;
+            me = m;
+        }
+        else
+        {
+            if (m > me)
+            {
+                me = m;
+                in = i;
+            }
+        }
+    }
+    return in;
+}
+
+void exerc9r_9(void)
+{
+    struct aluno a[6] = {
+        {1, "nome 1", 5.5, 3.3, 2.2},
+        {2, "nome 2", 7.5, 4.3, 4.2},
+        {3, "nome 3", 8.5, 5.3, 6.2},
+        {4, "nome 4", 6.5, 9.3, 6.2},
+        {5, "nome 5", 9.5, 2.3, 4.2},
+        {6, "nome 6", 4.5, 1.3, 2.2},
+    };
+    int i = maior_media_geral(a, 6);
+    printf(" o índice da maior média geral é %d.\n", i);
+}
+
+int eh_palindromo(char s[])
+{
+    int n = strlen(s), pos = n;
+    char p[n];
+    for (int i = 0; i < n; i++)
+        p[i] = NULL;
+    for (int i = 0; i < n; i++)
+        p[--pos] = s[i];
+    return (strcmp(s, p) == 0);
+}
+
+void exerc9r_10(void)
+{
+    char v[] = "arara";
+    int b = eh_palindromo(v);
+    if (b)
+        printf(" %s é palindromo.\n", v);
+    else
+        printf(" %s não é palindromo.\n", v);
+}
+
+void to_maiuscula(char s[])
+{
+    for (int i = 0; i < strlen(s); i++)
+        if (s[i] >= 97 && s[i] <= 122)
+            s[i] -= 32;
+}
+
+void exerc9r_11(void)
+{
+    char s[] = "arara";
+    to_maiuscula(s);
+    printf(" %s.\n", s);
+}
+
+void soma_vetor_pi(int v[], int n, int *si, int *sp)
+{
+    int ti = 0, tp = 0;
+    for (int i = 0; i < n; i++)
+    {
+        if (v[i] % 2 == 0)
+            tp += v[i];
+        else
+            ti += v[i];
+    }
+    *si = ti;
+    *sp = tp;
+}
+
+void exerc9r_12(void)
+{
+    int v[10], ti = 0, tp = 0;
+    for (int i = 0; i < 10; i++)
+    {
+        v[i] = i;
+        printf(" %d", i);
+    }
+    soma_vetor_pi(v, 10, &ti, &tp);
+    printf("\n soma dos impares = %d. soma dos pares = %d.\n", ti, tp);
+}
+
+int compare(const void *a, const void *b)
+{
+    return (*(int *)a - *(int *)b);
+}
+
+int ordenar(int v[], int n)
+{
+    qsort(v, n, sizeof(v[0]), compare);
+}
+
+void exerc9r_13(void)
+{
+    int v[9];
+    int pos = 0;
+    for (int i = 9; i >= 0; i--)
+        v[pos++] = i;
+    for (int i = 0; i < 9; i++)
+        printf(" %d", v[i]);
+    printf("\n");
+    ordenar(v, 9);
+    for (int i = 0; i < 9; i++)
+        printf(" %d", v[i]);
+    printf("\n");
+}
+
+int eq_segundo_grau(float a, float b, float c, float *r1, float *r2)
+{
+    if (a == 0)
+    {
+        printf("Não é equação do segundo grau.\n");
+        return -1;
+    }
+    float d = (b * b) - (4.0 * a * c);
+    if (d < 0)
+    {
+        return 0;
+    }
+    else if (d == 0)
+    {
+        float r = -b / (2.0 * a);
+        *r1 = r;
+        return 1;
+    }
+    else
+    {
+        float r01 = (-b + d) / (2.0 * a);
+        float r02 = (-b - d) / (2.0 * a);
+        *r1 = r01;
+        *r2 = r02;
+        return 2;
+    }
+}
+
+void exerc9r_14(void)
+{
+    float a = 5.0, b = 10.0, c = 5.0, rz1 = 0.0, rz2 = 0.0;
+    int r = eq_segundo_grau(a, b, c, &rz1, &rz2);
+    if (r == 0)
+        printf("Não existe raiz.\n");
+    else if (r == 1)
+        printf("Raiz única: %f.\n", rz1);
+    else if (r == 2)
+        printf("Raizes %f e %f.\n", rz1, rz2);
+    else if (r == -1)
+        printf("Não é equação do segundo grau.\n");
+}
+
+void maior_menor(int v[], int n, int *maior, int *menor)
+{
+    int ma = 0, me = 0;
+    for (int i = 0; i < n; i++)
+    {
+        if (i == 0)
+        {
+            ma = v[i];
+            me = v[i];
+        }
+        else
+        {
+            if (v[i] > ma)
+                ma = v[i];
+            if (v[i] < me)
+                me = v[i];
+        }
+    }
+    *maior = ma;
+    *menor = me;
+}
+
+void exerc9r_15(void)
+{
+    int maior, menor, v[] = {5, 4, 3, 2, 1, 0, 9, 8, 7, 6};
+    maior_menor(v, 10, &maior, &menor);
+    printf("maior = %d, menor = %d.\n", maior, menor);
+}
+
+void maior_qt(int v[], int n, int *maior, int *qt)
+{
+    int ma = 0, q = 0;
+    for (int i = 0; i < n; i++)
+    {
+        if (i == 0)
+        {
+            ma = v[i];
+            q = 1;
+        }
+        else
+        {
+            if (v[i] > ma)
+            {
+                ma = v[i];
+                q = 1;
+            }
+            else if (v[i] == ma)
+            {
+                q++;
+            }
+        }
+    }
+    *maior = ma;
+    *qt = q;
+}
+void exerc9r_16(void)
+{
+    int maior, qt, v[] = {5, 4, 3, 9, 1, 0, 9, 8, 7, 6};
+    maior_qt(v, 10, &maior, &qt);
+    printf("maior = %d, %d vezes.\n", maior, qt);
+}
 
 void exerc9c_1(void) {}
 void exerc9c_2(void) {}
