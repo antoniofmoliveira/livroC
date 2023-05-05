@@ -51,7 +51,7 @@ int main(int argc, char const *argv[])
     // exerc9c_8();
     // exerc9c_9();
     // exerc9c_10();
-    exerc9c_11();
+    // exerc9c_11();
     // exerc9c_12();
     // exerc9c_13();
     // exerc9c_14();

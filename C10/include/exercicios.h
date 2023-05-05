@@ -1,0 +1,10 @@
+void exerc10_1(void);
+void exerc10_2(void);
+void exerc10_3(void);
+void exerc10_4(void);
+void exerc10_5(void);
+void exerc10_6(void);
+void exerc10_7(void);
+void exerc10_8(void);
+void exerc10_9(void);
+void exerc10_10(void);
