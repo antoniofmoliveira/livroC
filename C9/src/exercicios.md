@@ -166,37 +166,52 @@ S = 1^3 + 2^3 + ... + n^3
 
 2) Crie uma função recursiva que receba um número inteiro N e retorne o somatório
 dos números de 1 a N.
+
 3) Crie uma função recursiva que receba um número inteiro N e imprima todos os
 números naturais de 0 até N em ordem crescente.
+
 4) Crie uma função recursiva que receba um número inteiro N e imprima todos os
 números naturais de 0 até N em ordem decrescente.
+
 5) Crie uma função recursiva que retorne a soma dos elementos de um vetor de in-
 teiros.
+
 6) Crie uma função recursiva que retorne a média dos elementos de um vetor de
 inteiros.
+
 7) Escreva uma função recursiva que receba por parâmetro dois valores inteiros x e y
-e calcule e retorne o resultado de xy para o programa principal.
+e calcule e retorne o resultado de x^y para o programa principal.
+
 8) A multiplicação de dois números inteiros pode ser feita através de somas sucessivas
 (por exemplo, 2 * 3 = 2 + 2 + 2). Crie uma função recursiva que calcule a multi-
 plicação por somas sucessivas de dois inteiros.
+
 9) Escreva uma função recursiva que receba um número inteiro positivo n. Calcule e
 retorne o seu fatorial n!:
 n! = n * (n – 1) * (n – 2) * ... * 1
+
 10) Escreva uma função recursiva que receba um número inteiro, maior ou igual a
 zero, e retorne o enésimo termo da sequência de Fibonacci. Essa sequência começa
 no termo de ordem zero e, a partir do segundo termo, seu valor é dado pela soma
 dos dois termos anteriores. Alguns termos dessa sequência são: 0, 1, 1, 2, 3, 5, 8,
 13, 21, 34.
+
+
 11) Escreva uma função recursiva que receba um valor inteiro e o retorne invertido.
 Exemplo:
 		
 Número lido = 123.
 Número retornado = 321.
+
+
 12) Escreva uma função recursiva que receba um valor inteiro em base decimal e o
 imprima em base binária.
+
 13) Faça uma função recursiva que calcule o valor da série S descrita a seguir para um
 valor n maior do que zero a ser fornecido como parâmetro para a mesma:
+
 14) Crie uma função recursiva que retorne o menor elemento em um vetor.
+
 15) Em matemática, o número harmônico designado por Hn define-se como o enési-
 mo termo da série harmônica. Ou seja:
 Escreva uma função recursiva que calcule o valor de qualquer Hn.
