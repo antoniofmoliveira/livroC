@@ -1,0 +1,4 @@
+azeite PURO                       1      10.20
+arroz                             2      15.00
+leite                            12       5.55
+café                              2       7.80
